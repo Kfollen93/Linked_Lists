@@ -50,7 +50,12 @@ class LinkedList
     end
 
     def at(index)
-
+    return nil if index > @size
+    node = @head
+    index.times do
+        node = node.next_node
+    end
+    puts "The value at index #{index} is: #{node.value}"
     end
 
     def to_s
@@ -75,3 +80,4 @@ alpha.to_s
 alpha.size
 alpha.head
 alpha.tail
+alpha.at(2)
