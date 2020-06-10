@@ -15,8 +15,8 @@ class LinkedList
         @size = 0
     end
 
-    def append(node)
-        node = Node.new(node)
+    def append_node(value)
+        node = Node.new(value)
         if @head == nil
             @head = node
         else
@@ -26,13 +26,12 @@ class LinkedList
             @size += 1
     end
 
-    def prepend(node)
-        node = Node.new(node)
+    def prepend_node(value)
+        node = Node.new(value)
         if @head == nil
             @head = node
         else
-            @head = current_node
-            current_node = @head.next_node
+            node.next_node = @head
             @head = node
             @size += 1
         end
@@ -47,11 +46,11 @@ class LinkedList
     end
 
     def tail
-        puts "The current list head is: #{@tail.value}"
+        puts "The current list tail is: #{@tail.value}"
     end
 
     def at(index)
-        
+
     end
 
     def to_s
@@ -66,14 +65,13 @@ class LinkedList
 end
 
 alpha = LinkedList.new
-alpha.append('A')
-alpha.append('B')
-alpha.append('C')
-alpha.append('D')
-
+alpha.append_node('A')
+alpha.append_node('B')
+alpha.append_node('C')
+alpha.append_node('D')
+alpha.prepend_node('Z')
 
 alpha.to_s
 alpha.size
 alpha.head
 alpha.tail
-
