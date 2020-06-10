@@ -58,6 +58,18 @@ class LinkedList
     puts "The value at index #{index} is: #{node.value}"
     end
 
+    def pop
+    end
+
+    def contains?(value)
+    end
+
+    def find(value)
+    end
+
+
+
+
     def to_s
         node = @head
         until node.nil?
