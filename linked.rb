@@ -79,7 +79,22 @@ class LinkedList
     end
 
     def contains?(value)
+        node = @head
+        if node.value.include?(value) 
+            return true
+        else
+            while node != nil do
+                node = node.next_node
+                if node != nil && node.value.include?(value)
+                    return true
+                elsif node == nil
+                    return false
+                end
+            end
+        end   
     end
+
+
 
     def find(value)
     end
@@ -107,10 +122,6 @@ alpha.prepend_node('Z')
 
 alpha.size
 alpha.to_s
-
-alpha.pop
-
-alpha.size
-alpha.to_s
+p alpha.contains?('H')
 
 
