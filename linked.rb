@@ -50,7 +50,10 @@ class LinkedList
   end
 
   def at(index)
-    return nil if index > @size
+    if index >= @size
+        puts "Invalid index."
+        return
+    end
 
     node = @head
     index.times do
@@ -96,6 +99,9 @@ class LinkedList
   end
 
   def find(value)
+
+
+
   end
 
   def to_s
@@ -115,6 +121,7 @@ alpha.append_node('C')
 alpha.append_node('D')
 alpha.prepend_node('Z')
 
-alpha.size
 alpha.to_s
-p alpha.contains?('H')
+alpha.size
+alpha.at(4)
+
