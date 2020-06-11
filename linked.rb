@@ -38,7 +38,7 @@ class LinkedList
     end
 
     def size
-        puts "The current list size is: #{@size}"
+        puts "\nThe current list size is: #{@size}"
     end
     
     def head
@@ -59,6 +59,23 @@ class LinkedList
     end
 
     def pop
+       if @head == nil
+        puts "There's nothing to pop"
+       end
+
+       if @head == @tail
+        @head = nil
+        @tail = nil
+       else
+        @current = @head
+        while @current.next_node != @tail
+            @current = @current.next_node
+        end
+        @current.next_node = nil
+    end
+    @size -= 1
+    puts "You popped the last item in the list.\n"
+    return @tail = @current
     end
 
     def contains?(value)
@@ -88,8 +105,12 @@ alpha.append_node('C')
 alpha.append_node('D')
 alpha.prepend_node('Z')
 
-alpha.to_s
 alpha.size
-alpha.head
-alpha.tail
-alpha.at(2)
+alpha.to_s
+
+alpha.pop
+
+alpha.size
+alpha.to_s
+
+
