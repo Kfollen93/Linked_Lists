@@ -59,7 +59,7 @@ class LinkedList
     index.times do
       node = node.next_node
     end
-    puts "The value at index #{index} is: #{node.value}"
+    puts "The node at index #{index} is: #{node.value}"
   end
 
   def pop
@@ -98,11 +98,28 @@ class LinkedList
     end
   end
 
+
+
   def find(value)
-
-
-
+    current_index = 0
+    node = @head
+    if node.value == value
+      puts "The node #{node.value} is at index: #{current_index}" 
+    else
+        while node != nil do
+        node = node.next_node
+        current_index += 1
+        if node != nil && node.value == value
+          puts "The node #{node.value} is at index: #{current_index}" 
+          return
+        elsif node == nil
+          puts "The value does not exist in this list."
+        end
+    end
+    end
   end
+
+
 
   def to_s
     node = @head
@@ -124,4 +141,5 @@ alpha.prepend_node('Z')
 alpha.to_s
 alpha.size
 alpha.at(4)
+alpha.find('B')
 
