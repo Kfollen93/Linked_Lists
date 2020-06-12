@@ -76,7 +76,7 @@ class LinkedList
         @current = @current.next_node
       end
       @current.next_node = nil
- end
+    end
     @size -= 1
     puts "You popped the last item in the list.\n"
     return @tail = @current
@@ -113,7 +113,7 @@ class LinkedList
         elsif node == nil
           puts "The value does not exist in this list."
         end
-  end
+      end
     end
   end
 
@@ -138,3 +138,8 @@ alpha.to_s
 alpha.size
 alpha.at(4)
 alpha.find('B')
+alpha.pop
+alpha.to_s
+p alpha.contains?('B')
+alpha.head
+alpha.tail
