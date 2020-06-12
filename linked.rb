@@ -90,11 +90,11 @@ class LinkedList
       while node != nil do
         node = node.next_node
         if node != nil && node.value.include?(value)
-           
+
           puts "The linked list does include: #{value}"
           return true
         elsif node == nil
-           
+
           puts "The linked list does not include: #{value}"
           return false
         end
